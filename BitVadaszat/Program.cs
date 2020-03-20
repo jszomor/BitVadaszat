@@ -53,8 +53,22 @@ namespace BitVadaszat
         bitArray[i] = result3 == 0 ? 0 : 1;
       }
 
-      Console.WriteLine("A megadott szám bináris formátuma:");
+      int megadott_szam = szam;
+      int maradek;
+      List<int> eredmeny = new List<int>();
 
+      while(szam > 0)
+      {
+        maradek = szam % 2;
+        szam = szam / 2;
+        eredmeny.Add(maradek);
+      }
+
+      Console.WriteLine("A megadott szám bináris formátuma:");
+      for (int i = eredmeny.Count-1; i >= 0; i--)
+      {
+        Console.Write(eredmeny[i]);
+      }
       Console.ReadKey();
     }
   }
